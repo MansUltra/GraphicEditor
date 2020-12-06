@@ -211,6 +211,11 @@ namespace Editor_1._0.Controllers
         }
         public IActionResult Privacy()
         {
+            if (Request.Cookies.ContainsKey("CurError"))
+            {
+                ViewData["CurError"] = Request.Cookies["CurError"];
+                Response.Cookies.Delete("CurError");
+            }
             ViewBag.IsAuth = User.Identity.IsAuthenticated;
             ViewBag.curPage = "Home/Privacy";
             return View();

@@ -552,14 +552,15 @@ document.getElementById("clearcanvas").addEventListener("mouseup",function(e)
   }
 });
 var form_window = document.getElementById("dowload_or_save_on_server");
-var nameOfImg
-document.getElementById("saveproject").addEventListener("mouseup",function(e)
+var nameOfImg;
+var saveProjBtn = document.getElementById("saveproject");
+saveProjBtn.addEventListener("mouseup",function(e)
 {
-    nameOfImg = prompt("Назовите своё изображение");
+    sendRequestWithCanvas();
+    nameOfImg = prompt(" Файл с тек работой(CurrentProject) обнавлён!\n Введите название, чтобы сохранить/скачать изображение");
   if(!nameOfImg){
     this.firstChild.download = "";
       this.firstChild.href = "";
-      alert("название не введено!");
     return;
     }
     ShowHTMLElement(modal_window);
@@ -568,9 +569,9 @@ document.getElementById("saveproject").addEventListener("mouseup",function(e)
 });
 document.getElementById("ok_btn").onclick = function (e) {
     if (document.getElementById("download_picture").checked) {
-        this.firstChild.download = nameOfImg + ".png";
-        this.firstChild.href = canvasC.toDataURL("image/png");
-        this.firstChild.click();
+        saveProjBtn.firstChild.download = nameOfImg + ".png";
+        saveProjBtn.firstChild.href = canvasC.toDataURL("image/png");
+        saveProjBtn.firstChild.click();
     }
     if (document.getElementById("save_on_server").checked) {
         sendRequestWithCanvas(false,nameOfImg);

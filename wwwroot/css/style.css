@@ -320,3 +320,12 @@ h6
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+#privacy_link
+{
+    display:block;
+    position:absolute;
+    right:5%;
+    text-align:right;
+    color:inherit;
+    font-size:130%;
+}
