@@ -1,0 +1,178 @@
+
+#marker, #rectangle, #ellipse, #pencil, #line, #return_button, #zoom_plus, #zoom_minus
+{
+  position: fixed;
+  top:3%;
+  left: 38%;
+  display: block;
+  height: 6.5%;
+  width: 3%;
+  cursor: pointer;
+  z-index: 15;
+  /* border:  2px solid black; */
+
+
+}
+#marker {
+    background: url("../images/marker2.png");
+    margin-left: 2%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#pencil {
+    background: url("../images/pencil3.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 5.5%;
+}
+#line {
+    background: url("../images/line2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 9%;
+}
+#rectangle {
+    background: url("../images/rect2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 12.5%;
+    z-index: 10;
+}
+#ellipse {
+    background: url("../images/ellips2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 16%;
+    z-index: 10;
+}
+
+/* #rectangle:hover div
+{
+  display: block;
+} */
+
+
+
+#lineWeight
+{
+  position: fixed;
+  top: 2.5%;
+  right: 25%;
+  width: 15%;
+  height: 6%;
+  border: 0px;
+  padding: 0;
+  -webkit-appearance: none;
+  background-color: rgba(0,0,0,0);
+}
+#lineWeight:focus
+{
+outline: none;
+}
+
+/* Дальше идут "Красивы Ползунки", реализованные под каждый браузер */
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 16px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-image: url("../images/slider1.png");
+}
+input[type=range]::-webkit-slider-thumb {
+    border: 0px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    background-image: url("../images/widthcontroller1.png");
+    -webkit-appearance: none;
+    margin-top: -15px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track{}
+
+
+
+input[type=range]::-moz-range-track {
+    height: 35%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-repeat: repeat-x;
+    background-size: 10% 100%;
+    background-image: url("../images/slider1.png");
+}
+input[type=range]::-moz-range-thumb {
+    width: 25%;
+    height: 150%;
+    border: 0px;
+    background-size: 80% 80%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    background-image: url("../images/widthcontroller1.png");
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    height: 35%;
+    border: 1px solid white;
+    background: url("../images/slider1.png");
+    border-color: white;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower
+{
+  background-color: rgba(0,0,0,0);
+}
+input[type=range]::-ms-fill-upper
+{
+  background-color: rgba(0,0,0,0);
+}
+input[type=range]::-ms-thumb {
+    border: 0px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    background-image: url("../images/widthcontroller1.png");
+    margin-top: 7px;
+}
+input[type=range]:focus::-ms-fill-lower{   background-color: rgba(0,0,0,0);}
+input[type=range]:focus::-ms-fill-upper{     background-color: rgba(0,0,0,0);}
+
+#return_button input, #zoom_plus input, #zoom_minus input
+{
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+}
+
+#return_button {
+    background: url("../images/return_button.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 52%;
+    z-index: 10;
+}
+#zoom_plus {
+    background: url("../images/zoom_plus.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 44.5%;
+    z-index: 10;
+}
+#zoom_minus {
+    background: url("../images/zoom_minus.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 41%;
+    z-index: 10;
+}
+#return_button:active, #zoom_minus:active, #zoom_plus:active
+{
+  background-size: 80% 80%;
+  background-position: center;
+}

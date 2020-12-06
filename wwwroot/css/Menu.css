@@ -1,0 +1,102 @@
+#directoryMenu
+{
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg,black 40%,rgba(0, 0, 0, 0));
+  /* background-color: rgba(0, 0, 0, 0.9); */
+
+}
+#directoryMenu input
+{
+  border: 0;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+
+}
+#directoryMenu input ~ span
+{
+  position: absolute;
+  transition-property: left;
+  transition-duration: 1s;
+  top:1%;
+  left: 1%;
+  width: 50%;
+  height: 100%;
+  /* border: 2px solid blue; */
+  cursor: pointer;
+  background-image: url("../images/logo6.png");
+  transform: rotate(270deg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+#activemenu
+{
+  position: fixed;
+  top: 11%;
+  left: 0%;
+  width: 10%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+}
+#directoryMenu:hover span{
+  transition-property: left;
+  transition-duration: 1s;
+  left: 120%;
+}
+#directoryMenu:hover #activemenu{
+  display: block;
+}
+ul
+{
+  list-style: none;
+  list-style-position: outside;
+}
+#clearcanvas, #newproject, #saveproject,#gallery
+{
+  display: block;
+  position: relative;
+  /* background-color:rgba(0, 0, 0, 0); */
+  cursor: pointer;
+  width: 40%;
+  height: 20%;
+  margin-left: 30%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#clearcanvas
+{
+  background-image: url('../images/bin1.png');
+  margin-top:10%;
+}
+#newproject {
+    background-image: url("../images/newproject1.png");
+    top: 0%;
+}
+#saveproject {
+    background-image: url("../images/saveproject1.png");
+    margin-top: 10%;
+}
+#gallery {
+    background-image: url("../images/gallery1.png");
+    margin-top: 10%;
+}
+    #saveproject:hover {
+        background-image: url("../images/saveproject2.png");
+    }
+#newproject:hover {
+    background-image: url("../images/newproject2.png");
+}
+#clearcanvas:hover {
+    background-image: url("../images/bin2.png");
+}
+#gallery:hover
+{
+    background-image: url("../images/gallery2.png")
+}

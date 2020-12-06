@@ -1,0 +1,322 @@
+﻿/* rgb(251, 232, 59); ЗОЛОТОЙ */
+body
+{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(36, 43, 45);
+  color:aqua;
+  font-size:150%;
+  font-family:Bahnschrift;
+}
+header
+{
+  padding: 0;
+  z-index: 5;
+  position: fixed;
+  top: 1%;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  border-bottom: 2px solid  rgb(20, 18, 20);
+  background-color: rgb(245, 156, 21);
+}
+#superLine
+{
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 1%;
+  background-color: black;
+}
+#darkLine
+{
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  top: 1%;
+  background: linear-gradient(0deg,black,rgba(0, 0, 0, 0));
+  /* z-index: 10; */
+}
+
+.HeaderSideBorder
+{
+  height: 10%;
+  width: 0.5%;
+  top: 1%;
+  left: 9.5%;
+  z-index: 10;
+  position: fixed;
+  background-color:black;
+  border-bottom: 2px solid  rgb(20, 18, 20);
+}
+footer
+{
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  height: 5%;
+  border-top: 2px solid rgb(20, 18, 20);
+  background-color: rgb(245, 156, 22);
+}
+.containerForCanvas
+{
+  position: fixed;
+  /* display: flex; */
+  width: 80%;
+  height: 81%;
+  top: 12%;
+  left: 10%;
+  overflow: auto;
+}
+canvas
+{
+  position: relative;
+}
+
+#auth {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    display: block;
+    height: 9%;
+    width: 5%;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../images/user_icon1.png");
+    cursor: pointer;
+}
+ 
+    #auth input {
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+#lowwerDarkLine {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    top: 95%;
+    background: linear-gradient(180deg,black,rgba(0, 0, 0, 0) 50%);
+}
+h3
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 40%;
+  line-height: 150%;
+  font-family: Courier New;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-style: double;
+  /* Century Gothic */
+  font-weight: bold;
+  color:  rgb(44, 60, 68);
+  font-size: 130%;
+  z-index: 10;
+}
+
+#cords, #curzoom
+{
+  color: white;
+  margin-left: 15%;
+  z-index: 20;
+  position: absolute;
+  font-size: 150%;
+}
+#curzoom{margin-left: 45%;}
+
+
+/* !!!Далее идут стили для всплывающего окна!!!  */
+
+#modal_window
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 50;
+  display: none;
+}
+#creating_window, #dowload_or_save_on_server, #login_window, #logout_window, #register_window, #picture_view {
+    display: none;
+    position: fixed;
+    background: rgb(19, 22, 23);
+}
+#creating_window {
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+}
+#login_window, #register_window {
+    top: 25%;
+    left: 37.5%;
+    padding-bottom:45px;
+    width: 25%;
+}
+#logout_window, #dowload_or_save_on_server {
+    top: 25%;
+    left: 37.5%;
+    height: 10%;
+    width: 25%;
+}
+
+#picture_view
+{
+    top:10%;
+    left:10%;
+    height:80%;
+    width:80%;
+    z-index:60;
+}
+#container_for_img {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    height: 90%;
+    width: 90%;
+    overflow: scroll;
+    display:grid;
+    align-content:center;
+    justify-content:center;
+}
+#cur_img_view {
+ 
+}
+#creating_window span {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    color: white;
+    width: 20%;
+}
+
+#modal_window input[type=button]
+{
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+}
+
+#for_file
+{
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 10%;
+}
+
+#for_new_width, #for_new_height
+{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 10%;
+  color: white;
+}
+
+#for_new_height
+{
+  left: 40%;
+}
+
+input[type="text"], input[type="email"],input[type="password"],input[type="number"]
+{
+    position:absolute;
+    left: 40%;
+    width: 40%;
+}
+table {
+    overflow-y: scroll;
+    padding: 0px;
+    position: fixed;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    top: 15%;
+    display: block;
+}
+tbody
+{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+tr
+{
+   display:flex;
+   height:30%;
+}
+td {
+    display:flex;
+    position:relative;
+    width: 20%;
+}
+.small_pictures {
+    display:block;
+    position:absolute;
+    top:5%;
+    left:5%;
+    width:90%;
+    height:90%;
+}
+h6
+{
+    font-size:100%;
+    color:#182035;
+    position:absolute;
+    top:5%;
+    left:20%;
+    z-index:10;
+    margin:0;
+    background-color:aquamarine;
+}
+.cancel-btn, .confirm-btn, .delete-btn {
+    position: absolute;
+   
+    height: 30px;
+    border-radius: 4px;
+    z-index: 10;
+    bottom: 2%;
+    cursor: pointer;
+}
+.cancel-btn {
+    background-color: darkslategray;
+    left: 10%;
+}
+.confirm-btn {
+    color:#3b0664;
+    background-color: aquamarine;
+    right: 10%;
+}
+.delete-btn {
+    background-color: crimson;
+    left: 50%;
+}
+#to_register, #to_login
+{
+    cursor:pointer;
+    color:aquamarine;
+    font-style:italic;
+    text-decoration:underline;
+    margin-bottom:3%;
+    
+}
+#go_home
+{
+    position:fixed;
+    top:1%;
+    left:1%;
+    height:9%;
+    width:5%;
+    background-image: url("../images/home1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

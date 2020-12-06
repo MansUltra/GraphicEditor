@@ -1,0 +1,34 @@
+﻿
+@section ExtraDependencies
+{
+    <script defer type="text/javascript" src="~/js/GalleryScript.js">
+    </script>
+}
+@ViewData["Title"]="Галерея"
+
+<table>
+        @for (int i = 0; i < (ViewBag.Pictures.Length + 4) / 5; i++)
+        {
+            <tr>
+                @for (int j = i * 5; j < Math.Min(i * 5 + 5, ViewBag.Pictures.Length); j++)
+                {
+                    <td>
+                        <h6 id="h_@j" class="above-picture">@ViewBag.Pictures[j].Name</h6>
+                        @if (ViewBag.Pictures[j].Image != null)
+                        {
+                            <img id="@j" class="small_pictures" onclick="pictureView(this)" src="data:image/png;base64,@(Convert.ToBase64String(ViewBag.Pictures[j].Image))" />
+                        }
+                    </td>
+                }
+            </tr>
+        }
+</table>
+
+<div id="picture_view">
+    <div id="container_for_img">
+        <img id="cur_img_view" />
+    </div>
+    <div id="cancel" class="cancel-btn">Отмена</div>
+    <div id="delete" class="delete-btn">Удалить</div>
+    <div id="go_edit" class="confirm-btn">В_редактор</div>
+</div>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] </title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" /> 
+    <script defer type="text/javascript" src="~/js/MasterScript.js">
+    </script> 
+    @RenderSection("ExtraDependencies",false)
+</head>
+
+<body onload="loadAnimation()" onunload="unloadAnimation()">
+    @if (ViewData["CurError"] != null)
+    {
+        <h6 hidden id="cur_error">@ViewData["CurError"]</h6>
+    }
+    <div id="superLine">  </div>
+    <header>
+        <span id="darkLine"></span>
+        <a id="go_home" asp-action="Index" asp-controller="Home"></a>
+        <div id="auth">
+            @if (ViewBag.IsAuth)
+            {
+                <input id="auth_check" type="checkbox" checked>
+            }
+            else
+            {
+                <input id="auth_check" type="checkbox">
+            }
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <span id="lowwerDarkLine"></span>
+    </footer>
+    <div id="modal_window">
+        <div id="login_window">
+            <div id="cancel1" class="cancel-btn">Отмена</div>
+            @{await Html.RenderPartialAsync("~/Views/Account/Login.cshtml");}
+        </div>
+        <div id="logout_window">
+            <h4>Выйти из аккаута и перейти к редактору</h4>
+            <div id="cancel2" class="cancel-btn">Отмена</div>
+            <form asp-action="Logout" asp-controller="Account">
+                <input type="submit" class="confirm-btn" value="Выйти" />
+            </form>
+        </div>
+        <div id="register_window">
+            <div id="cancel3" class="cancel-btn">Отмена</div>
+            @{await Html.RenderPartialAsync("~/Views/Account/Register.cshtml");}
+        </div>
+    </div>
+</body>
+</html>
