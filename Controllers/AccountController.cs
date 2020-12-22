@@ -114,8 +114,9 @@ namespace Editor_1._0.Controllers
             {
                 Author user = await db.Authors.FirstOrDefaultAsync(u => u.Mail == model.Mail);
                 if (user == null)
-                { 
-                    db.Authors.Add(new Author { FName = model.Fname, SName = model.Sname, Age = model.Age, Mail = model.Mail, Password = model.Password });
+                {
+                    user = new Author { FName = model.Fname, SName = model.Sname, Age = model.Age, Mail = model.Mail, Password = model.Password };
+                    db.Authors.Add(user);
                     await db.SaveChangesAsync();
                     await Authenticate(model.Mail); // аутентификация
 
